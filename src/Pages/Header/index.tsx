@@ -1,3 +1,4 @@
+
 import * as C  from './styles'
 // @ts-ignore  
 import imgPokeball from '../../Assets/pokeball.png'
@@ -15,3 +16,4 @@ const  Header = () => {
 }
 
 export default Header
+
