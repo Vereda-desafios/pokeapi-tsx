@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { PokeCard } from '../components/PokeCard'
-import { Header } from '../Pages/Header'
+import  Header  from '../Pages/Header'
+import Search from '../Pages/Search';
+import GlobalStyles from '../globalstyles'
 
 interface Repository {
   name: string;
@@ -23,17 +25,25 @@ function App() {
   },[])
   
   return (
+    <>
+    <GlobalStyles/>
+    <Header/>
+    <Search/>
     <ul>
       {
         repositories.length !==0 && repositories?.map((repo: { name: string, url: string}) => {
           return (
             <li key={repo.name}>
                <PokeCard props={repo}/>
+               
             </li>
+            
           )
         })
       }
     </ul>
+    
+    </>
   )
 }
 
