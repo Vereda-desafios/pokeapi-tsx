@@ -14,14 +14,15 @@ position: relative;
 input{
     border: none;
     box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.2);
-    width: 600px;
+    width: 500px;
     height: 40px;
     border-radius: 40px
     
 }
 img{
     position: absolute;
-    right: 20px;
+    right: 70px;
     top: 13px;
+    cursor: pointer;
 }
 `
