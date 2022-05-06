@@ -1,6 +1,14 @@
 import styled from "styled-components"
 
 export const ContainerHeader = styled.header `
-background-color: red;
-
+display: flex;
+align-items: center;
+justify-content: center;
+.fundo{
+    width:100%;
+}
+.pokebola{
+    position:absolute;
+    width:5%;
+}
 `
