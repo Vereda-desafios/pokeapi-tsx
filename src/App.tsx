@@ -1,7 +1,9 @@
 import React from "react";
-
+import Header from "./Pages/Header"
 function App() {
-  return <h1>hello new word</h1>;
+  return(
+    <Header/>
+  ) 
 }
 
 export default App;
