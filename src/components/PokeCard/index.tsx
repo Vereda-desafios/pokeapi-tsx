@@ -11,10 +11,12 @@ props: {
 
 type Pokemon = {
     name: string
+    id: number
 }
 export const PokeCard:FC<Props> = ({props}: Props) => {
     const [pokedata, setPokeData] = useState<Pokemon>({
-        name: ""
+        name: "",
+        id: 0
     })
     useEffect(() => {
         fetch(`${props.url}`)
@@ -24,10 +26,17 @@ export const PokeCard:FC<Props> = ({props}: Props) => {
         })
       },[])
 
-      console.log("data: ", pokedata.name)
+      console.log("data: ", pokedata.name, pokedata.id)
     return (
         <C.Container>
-        <p> {pokedata.name}</p>
+       
+        <C.Card>
+            <C.Image/>
+            <C.Number>#{pokedata.id}</C.Number>
+            <C.Type></C.Type>
+            <C.Name>{pokedata.name}</C.Name>
+        </C.Card>
+        
         </C.Container>
     )
 }
