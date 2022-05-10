@@ -15,6 +15,7 @@ interface PokemonsProps {
 
 export function CardList() {
   const [pokemonsList, setPokemonsList] = useState<PokemonsProps[]>([])
+  const [searchInput, setSearchInput] = useState('')
 
   useEffect(() => {
     async function fetchData() {
@@ -41,12 +42,22 @@ export function CardList() {
     fetchData()
   }, [])
 
+  const filteredPokemons = searchInput
+    ? pokemonsList.filter((pokemon) => {
+        return pokemon.name.toLowerCase().includes(searchInput.toLowerCase())
+      })
+    : pokemonsList
+
   return (
     <Container>
-      <SearchInput />
+      <SearchInput
+        id="searchValue"
+        value={searchInput}
+        onChange={(event) => setSearchInput(event.target.value)}
+      />
       <h2>Pokédex</h2>
       <ListContainer>
-        {pokemonsList.map((pokemon, id) => (
+        {filteredPokemons?.map((pokemon, id) => (
           <Card
             key={id}
             name={pokemon.name}

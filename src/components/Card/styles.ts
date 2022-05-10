@@ -72,6 +72,7 @@ export const PokemonImage = styled.div`
     z-index: 1;
     transition: transform 0.6s;
   }
+
   img.img-pokemon {
     position: relative;
     width: 100%;
@@ -79,6 +80,7 @@ export const PokemonImage = styled.div`
     z-index: 2;
     transition: 0.2s;
   }
+
   ${Container}:hover & {
     img.img-pokemon {
       transform: scale(1.1);
